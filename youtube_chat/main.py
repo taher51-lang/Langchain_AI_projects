@@ -22,9 +22,6 @@ except:
 # Phase 2 Text Splitting using Recursive Text Splitter
 splitter = RecursiveCharacterTextSplitter(chunk_size = 1000,chunk_overlap = 200)
 chunk_list2 = splitter.create_documents([text])
-# for i in chunk_list:
-#     print(i)
-# Phase 3: Embedding Generation and storage in database
 load_dotenv()
 llm = HuggingFaceEmbeddings(
     model_name = "sentence-transformers/all-MiniLM-L6-v2"
@@ -50,8 +47,6 @@ parallelChain = RunnableParallel({
 llm = ChatGoogleGenerativeAI(
     model = "gemini-2.5-flash"
 )
-# result = retriever.invoke("What is ollama")
-# print(format(result))
 parser = StrOutputParser()
 main_chain = parallelChain | prompt | llm | parser 
 result = main_chain.invoke("what is ollama")
