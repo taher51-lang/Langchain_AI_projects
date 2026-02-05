@@ -1,0 +1,14 @@
+# Core LangChain
+langchain>=1.2.3
+langchain-core>=1.2.6
+langchain-community
+
+# Provider Integrations
+langchain-openai>=1.1.7
+langchain-google-genai>=4.1.3
+langchain-huggingface>=1.2.0
+langgraph
+
+# Supporting Libraries
+python-dotenv      # For managing your API keys
+google-genai       # The new consolidated Google SDK
